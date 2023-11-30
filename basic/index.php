@@ -128,3 +128,22 @@ echo max($numbers);
 echo max(5, 11, 7, 1);
 
 */
+
+$numbers = array(4, 6, 8, 10);
+// echo "TRUYEN MANG: " . mymax($numbers);
+// echo "TRUYEN NHIEU DOI SO: " . mymax(4, 6, 8, 7);
+
+function myMax($value, ...$values)
+{
+    $arr = [];
+    if (is_array($value)) {
+        $arr = $value;
+    } else {
+        $arr = $values;
+        array_unshift($arr, $value);
+    }
+    var_dump($arr);
+}
+
+mymax($numbers);
+// myMax(4, 6, 8);
